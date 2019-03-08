@@ -1,4 +1,4 @@
-# CS543_ComputerGraphics_HW3:Hierarchical 3D Modeling of L-System Trees
+# CS543_ComputerGraphics_HW3:  Hierarchical 3D Modeling of L-System Trees
 
 Demo Video:https://www.youtube.com/watch?v=rVUEfLsCp_k&feature=youtu.be
 ![ggplot2](Capture.PNG)
