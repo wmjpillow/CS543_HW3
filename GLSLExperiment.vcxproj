@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1654A1CC-FA42-415F-8E83-6905FA03B52A}</ProjectGuid>
+    <RootNamespace>GLSLExperiment</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\glew\lib;..\glew\include;..\freeglut\include\GL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>freeglut.lib;glew32.lib;glew32s.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\glew\lib;..\freeglut\lib;</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\glew\lib;..\glew\include;..\freeglut\include\GL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>freeglut.lib;glew32.lib;glew32s.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\glew\lib;..\freeglut\lib;</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="example1.cpp" />
+    <ClCompile Include="InitShader.cpp" />
+    <ClCompile Include="textfile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Angel.h" />
+    <ClInclude Include="CheckError.h" />
+    <ClInclude Include="mat.h" />
+    <ClInclude Include="textfile.h" />
+    <ClInclude Include="vec.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ply_files\airplane.ply" />
+    <None Include="ply_files\ant.ply" />
+    <None Include="ply_files\balance.ply" />
+    <None Include="ply_files\beethoven.ply" />
+    <None Include="ply_files\big_atc.ply" />
+    <None Include="ply_files\big_dodge.ply" />
+    <None Include="ply_files\big_porsche.ply" />
+    <None Include="ply_files\big_spider.ply" />
+    <None Include="ply_files\canstick.ply" />
+    <None Include="ply_files\chopper.ply" />
+    <None Include="ply_files\cow.ply" />
+    <None Include="ply_files\cylinder.ply" />
+    <None Include="ply_files\dolphins.ply" />
+    <None Include="ply_files\egret.ply" />
+    <None Include="ply_files\f16.ply" />
+    <None Include="ply_files\footbones.ply" />
+    <None Include="ply_files\fracttree.ply" />
+    <None Include="ply_files\galleon.ply" />
+    <None Include="ply_files\hammerhead.ply" />
+    <None Include="ply_files\helix.ply" />
+    <None Include="ply_files\hind.ply" />
+    <None Include="ply_files\kerolamp.ply" />
+    <None Include="ply_files\ketchup.ply" />
+    <None Include="ply_files\mug.ply" />
+    <None Include="ply_files\part.ply" />
+    <None Include="ply_files\pickup_big.ply" />
+    <None Include="ply_files\pump.ply" />
+    <None Include="ply_files\pumpa_tb.ply" />
+    <None Include="ply_files\sandal.ply" />
+    <None Include="ply_files\saratoga.ply" />
+    <None Include="ply_files\scissors.ply" />
+    <None Include="ply_files\shark.ply" />
+    <None Include="ply_files\sphere.ply" />
+    <None Include="ply_files\steeringweel.ply" />
+    <None Include="ply_files\stratocaster.ply" />
+    <None Include="ply_files\street_lamp.ply" />
+    <None Include="ply_files\teapot.ply" />
+    <None Include="ply_files\tennis_shoe.ply" />
+    <None Include="ply_files\tommygun.ply" />
+    <None Include="ply_files\trashcan.ply" />
+    <None Include="ply_files\turbine.ply" />
+    <None Include="ply_files\urn2.ply" />
+    <None Include="ply_files\walkman.ply" />
+    <None Include="ply_files\weathervane.ply" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="lsys_files\lsys1.txt" />
+    <Text Include="lsys_files\lsys2.txt" />
+    <Text Include="lsys_files\lsys3.txt" />
+    <Text Include="lsys_files\lsys3DHilbert-test input.txt" />
+    <Text Include="lsys_files\lsys4.txt" />
+    <Text Include="lsys_files\lsysown.txt" />
+    <Text Include="lsys_files\lsysSier.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
