@@ -1,0 +1,29 @@
+# Sample L-System file for drawing a 2D tree (example c)
+#
+# Created by Fan Wu
+# 2005-11-09
+#
+# The structure of the file is:
+# 1. Some number of comment lines, each beginning with a '#' in the first position.
+# 2. A line beginning with the word "len" followed by a colon, a space, and then a
+#    single integer representing the length of each segment to draw.
+# 3. A line beginning with the word "iter" followed by a colon, a space, and then a
+#    single integer representing the number of iterations to apply.
+# 4. A line beginning with the word "rot" followed by a colon, a space, and then three
+#    floating-point numbers, separated by spaces, representing the X, Y, and Z rotations,
+#    respectively.
+# 5. Zero or more lines beginning with the word "rep" followed by a colon, a space, and then
+#    a pair of characters "X,Y". These are used to go through the string that results after
+#    applying the production rules "iter" times. For each occurence of "X" in this string,
+#    it is replaced with the character "Y". "Y" may be ommitted, in which case all
+#    occurences of "X" are removed from the string.
+# 6. A line beginning with the word "start" followed by a colon, a space, and then
+#    the initial turtle string.
+# 7. Some number of production rules of the form: "L: R", where "L" is a single
+#    character representing the left-hand side of the rule, and "R" is a sequence
+#    of characters representing the replacement string for "L".
+len: 1
+iter: 4
+rot: 22.5 22.5 22.5
+start: F
+F: FF-[-F+F+F]+[+F-F-F]
